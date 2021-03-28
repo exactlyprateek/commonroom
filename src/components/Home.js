@@ -10,7 +10,7 @@ import {
 	Tab,
 	Square,
 	Image,
-	Center,
+
 	Text,
 	VStack,
 	WrapItem,
@@ -18,8 +18,7 @@ import {
 	StackDivider,
 	Link,
 	Badge,
-	Stack,
-	Icon,
+
 	Button,
 	HStack,
 	IconButton,
@@ -30,10 +29,10 @@ import {
 	AccordionIcon,
 	ButtonGroup
 } from '@chakra-ui/react';
-import Logo from './Logo';
+
 import Header from './Header';
-import { Grid, GridItem } from '@chakra-ui/react';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+
+import { AiOutlineHeart } from 'react-icons/ai';
 import { FiMessageCircle, FiShare2 } from 'react-icons/fi';
 
 function Home() {
@@ -135,7 +134,7 @@ function Home() {
 			</Box>
 		</Box>
 	));
-	const data = [ 'name', 'one', 'no' ];
+	
 	return (
 		<div className="bg-col">
 			<Header />
