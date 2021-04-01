@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Box, Flex, Text, Button, Stack } from '@chakra-ui/react';
 
 import Logo from './Logo';
+import Signup from './Singup';
 
 const NavBar = (props) => {
 	const [ isOpen, setIsOpen ] = React.useState(false);
@@ -66,8 +67,9 @@ const MenuLinks = ({ isOpen }) => {
 				<MenuItem to="/how">How It works </MenuItem>
 				<MenuItem to="/faetures">Features </MenuItem>
 				<MenuItem to="/pricing">Pricing </MenuItem>
-				<MenuItem to="/signup" isLast>
-					<Button
+				<MenuItem to="#" isLast>
+					<Signup />
+					{/* <Button
 						size="sm"
 						rounded="md"
 						color={[ 'primary.500', 'primary.500', 'white', 'white' ]}
@@ -80,7 +82,7 @@ const MenuLinks = ({ isOpen }) => {
 						}}
 					>
 						Create Account
-					</Button>
+					</Button> */}
 				</MenuItem>
 			</Stack>
 		</Box>
@@ -95,8 +97,8 @@ const NavBarContainer = ({ children, ...props }) => {
 			justify="space-between"
 			wrap="wrap"
 			w="100%"
-			mb={8}
-			p={8}
+			mb={1}
+			p={4}
 			bg={[ 'primary.500', 'primary.500', 'transparent', 'transparent' ]}
 			color={[ 'white', 'white', 'primary.700', 'primary.700' ]}
 			{...props}

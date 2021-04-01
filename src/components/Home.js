@@ -10,7 +10,6 @@ import {
 	Tab,
 	Square,
 	Image,
-
 	Text,
 	VStack,
 	WrapItem,
@@ -18,7 +17,6 @@ import {
 	StackDivider,
 	Link,
 	Badge,
-
 	Button,
 	HStack,
 	IconButton,
@@ -27,9 +25,11 @@ import {
 	AccordionButton,
 	AccordionPanel,
 	AccordionIcon,
-	ButtonGroup
+	ButtonGroup,
+	MotionBox,
+	Center
 } from '@chakra-ui/react';
-
+import { HTMLMotionProps, motion } from 'framer-motion';
 import Header from './Header';
 
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -74,7 +74,7 @@ function Home() {
 			borderColor="primary.950"
 			bg="white"
 			className="shadow-custom-anim"
-			width={[ '115%', '90%', '70%', '60%' ]}
+			width={[ '100%', '90%', '70%', '60%' ]}
 		>
 			<WrapItem alignItems="flex-end" align="center">
 				<Avatar mx="1.5" mb="2" size="sm" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
@@ -108,13 +108,14 @@ function Home() {
 					</Box>
 				</HStack>
 			</Box>
-			<Box mx="2" my="2"><Box flex="1" textAlign="left">
-									<Text h="30px" color="black" isTruncated>
-										<Link fontWeight="semibold" ml="1.5" py="3" w="100%" color="black">
-											{i.user}
-										</Link>: {i.caption}
-									</Text>
-								</Box>
+			<Box mx="2" my="2">
+				<Box flex="1" textAlign="left">
+					<Text h="30px" color="black" isTruncated>
+						<Link fontWeight="semibold" ml="1.5" py="3" w="100%" color="black">
+							{i.user}
+						</Link>: {i.caption}
+					</Text>
+				</Box>
 				<Accordion allowToggle>
 					{' '}
 					<AccordionItem>
@@ -134,32 +135,99 @@ function Home() {
 			</Box>
 		</Box>
 	));
-	
+
 	return (
-		<div className="bg-col">
+		<div className="bg-col" maxH="100vh">
 			<Header />
-			<Container minChildWidth="120px" maxW="container.lg">
+			<Container minChildWidth="120px" maxW="container.lg" p="0">
 				<Tabs isFitted isLazy variant="enclosed">
-					<TabList>
+					<TabList mb="0">
 						<Tab>Home</Tab>
-						<Tab>Post</Tab>
+						<Tab>News</Tab>
 						<Tab>Notes</Tab>
 						<Tab>Result</Tab>
 						<Tab>Room</Tab>
 					</TabList>
 					<TabPanels>
-						<TabPanel>
-							<VStack divider={<StackDivider borderColor="gray.100" />} spacing={2} align="center">
+						<TabPanel p="0">
+							<VStack
+								divider={<StackDivider borderColor="gray.100" />}
+								spacing={1}
+								align="center"
+								maxH="83vh"
+								overflow="scroll"
+							>
 								{pr}
 							</VStack>
 						</TabPanel>
+						<TabPanel p="0">
+							<VStack
+								divider={<StackDivider borderColor="gray.100" />}
+								spacing={1}
+								align="center"
+								maxH="83vh"
+								overflow="scroll"
+							>
+								<iframe
+									id="inlineFrameExample"
+									title="Inline Frame Example"
+									width="100%"
+									src="http://msit.in/latest_news"
+									style={{ height: '1000px' }}
+								/>
+							</VStack>
+						</TabPanel>
 						<TabPanel>
-							<Square size="150px" bg="purple.700" color="white">
-								<Box bg="black" className="shadow-custom-anim" height="150px" />
-							</Square>
-							<SimpleGrid columns={2} spacing={10}>
-								<Box bg="black" className="shadow-custom-anim" height="75vh" />
-							</SimpleGrid>
+							<VStack
+								divider={<StackDivider borderColor="gray.100" />}
+								spacing={1}
+								align="center"
+								maxH="83vh"
+								overflow="scroll"
+							>
+								
+								<iframe
+									id="inlineFrameExample"
+									title="Inline Frame Example"
+									width="100%"
+									style={{ height: '533px' }}
+									src="https://noteshub.co.in/"
+								/>
+							</VStack>
+						</TabPanel>
+						<TabPanel>
+							<VStack
+								divider={<StackDivider borderColor="gray.100" />}
+								spacing={1}
+								align="center"
+								maxH="83vh"
+								overflow="scroll"
+							>
+								
+								<iframe
+									id="inlineFrameExample"
+									title="Inline Frame Example"
+									width="100%"
+									style={{ height: '533px' }}
+									src="https://ipuranklist.com/search-by-name"
+								/>
+							</VStack>
+						</TabPanel>
+						<TabPanel>
+							<VStack
+								divider={<StackDivider borderColor="gray.100" />}
+								spacing={1}
+								align="center"
+								maxH="83vh"
+								overflow="scroll"
+							>
+								<Text fontSize="2xl">Room</Text>
+								<Box h="533px">
+									<Center>
+										<Text size="lg">Coming Soon</Text>
+									</Center>
+								</Box>
+							</VStack>
 						</TabPanel>
 					</TabPanels>
 				</Tabs>
