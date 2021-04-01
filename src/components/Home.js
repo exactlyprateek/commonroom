@@ -1,14 +1,12 @@
 import React from 'react';
 import {
 	Container,
-	SimpleGrid,
 	Box,
 	Tabs,
 	TabList,
 	TabPanel,
 	TabPanels,
 	Tab,
-	Square,
 	Image,
 	Text,
 	VStack,
@@ -26,10 +24,8 @@ import {
 	AccordionPanel,
 	AccordionIcon,
 	ButtonGroup,
-	MotionBox,
 	Center
 } from '@chakra-ui/react';
-import { HTMLMotionProps, motion } from 'framer-motion';
 import Header from './Header';
 
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -185,7 +181,6 @@ function Home() {
 								maxH="83vh"
 								overflow="scroll"
 							>
-								
 								<iframe
 									id="inlineFrameExample"
 									title="Inline Frame Example"
@@ -193,6 +188,9 @@ function Home() {
 									style={{ height: '533px' }}
 									src="https://noteshub.co.in/"
 								/>
+								<Link href="https://drive.google.com/drive/u/0/folders/1KLCgyP1-nFmVa-Sv0UYWLHh8Og1gIGgE">
+									drive
+								</Link>
 							</VStack>
 						</TabPanel>
 						<TabPanel>
@@ -203,7 +201,6 @@ function Home() {
 								maxH="83vh"
 								overflow="scroll"
 							>
-								
 								<iframe
 									id="inlineFrameExample"
 									title="Inline Frame Example"
